@@ -13,6 +13,7 @@
 #     name: python3
 # ---
 
+# %%
 """
 A demo of common Geant4 data analysis tasks
 """
