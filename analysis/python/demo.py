@@ -35,7 +35,7 @@ print(f"random numbers: {data}")
 # %% save data to a root file in the same folder as this script
 subdir = "."
 if any('vscode' in mod for mod in sys.modules):
-    scriptdir = os.path.dirname(__file__)
+    scriptdir = os.getcwd()  
     subdir = scriptdir.rpartition("geant4/")[-1]
 print(f"path relative to the project root: {subdir}")
 filename = subdir + "/spectrum.root"
@@ -83,6 +83,6 @@ stats = (f"$\\mu$ = {popt[1]:.2f} ± {perr[1]:.2f} MeV\n"
          f"$\\sigma$ = {popt[2]:.2f} ± {perr[2]:.2f} MeV")
 plt.gca().text(0.05, 0.95, stats, transform=plt.gca().transAxes,
                verticalalignment='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.5))
-
+plt.savefig("spectrum.png", dpi=300)
 plt.show()
 # %%

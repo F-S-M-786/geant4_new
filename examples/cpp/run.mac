@@ -1,18 +1,16 @@
 /run/initialize
-/geometry/test/run
-/vis/open VRML2FILE  
-/vis/drawVolume 
-/vis/scene/add/axes
+
+/process/list
+
+/vis/open VRML2FILE
+/vis/drawVolume
 /vis/scene/add/trajectories
 
 /tracking/verbose 2
 
-/gps/particle alpha
-/gps/energy 1 MeV
+/gps/particle e-
+/gps/energy 100 keV
 /gps/position -10 0 0 cm
 /gps/direction 1 0 0
 
-
-
-
-/vis/scene/endOfEventAction accumulate
+/run/beamOn 20
